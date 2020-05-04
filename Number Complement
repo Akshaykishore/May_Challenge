@@ -18,12 +18,11 @@ Explanation: The binary representation of 1 is 1 (no leading zero bits), and its
 
 class Solution {
     public int findComplement(int num) {
-        String str = "";
         int comp,complement = 0;
-        int one,n = 0;
+        int n = 0;
         while (num > 0)
         {
-             comp = num%2;
+            comp = num%2;
             if(comp == 0)
             {
                 comp = 1;
@@ -32,8 +31,7 @@ class Solution {
                 comp = 0;
             }
             num = num/2;     
-            one = Integer.parseInt(str+comp);
-            complement = complement + (int)Math.round(one*Math.pow(2,n)); 
+            complement = complement + (int)Math.round(comp*Math.pow(2,n)); 
             n = n+1;
         }
         return complement;
