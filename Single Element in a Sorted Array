@@ -11,7 +11,7 @@ Output: 10
 
 Note: Your solution should run in O(log n) time and O(1) space.
 
-Solution:
+Solution 1:
 
 class Solution {
     public int singleNonDuplicate(int[] nums) {
@@ -36,4 +36,17 @@ class Solution {
         }
         return -1;
     }
+}
+
+
+Solution 2:
+
+class Solution {
+  public int singleNumber(int[] nums) {
+    int a = 0;
+    for (int i : nums) {
+      a ^= i;
+    }
+    return a;
+  }
 }
